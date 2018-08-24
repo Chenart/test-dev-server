@@ -5,10 +5,12 @@
   "scripts": {
     "client": "cd client && npm start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\""
+    "startAll": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\" \"node generateMockData\"",
+    "generateMockData": "node generateMockData"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "json-schema-faker": "^0.5.0-rc15"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"
